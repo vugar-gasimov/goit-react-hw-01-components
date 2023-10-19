@@ -7,7 +7,7 @@ import {
 
 export const Transactions = ({ type, amount, currency, bgIndex }) => {
   return (
-    <React.Fragment>
+    <>
       {bgIndex % 2 === 0 ? (
         <StyledTbodyEven>
           <tr>
@@ -25,6 +25,6 @@ export const Transactions = ({ type, amount, currency, bgIndex }) => {
           </tr>
         </StyledTbodyOdd>
       )}
-    </React.Fragment>
+    </>
   );
 };

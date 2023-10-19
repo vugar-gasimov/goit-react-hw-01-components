@@ -3,10 +3,12 @@ import {
   StyledItem,
   StyledLabel,
   StyledPercentage,
+  getRandomColor,
 } from './statisticsStyled.Styled';
 const Stats = ({ label, percentage }) => {
+  const bgColor = getRandomColor();
   return (
-    <StyledItem>
+    <StyledItem bgColor={bgColor}>
       <StyledLabel>{label}</StyledLabel>
       <StyledPercentage>{percentage}%</StyledPercentage>
     </StyledItem>

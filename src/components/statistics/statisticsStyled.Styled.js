@@ -1,7 +1,16 @@
 import styled from 'styled-components';
 
+export function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
 export const StyledStatistics = styled.section`
-  background-color: #f5f5f5;
+  background-color: ${({ bgColor }) => bgColor || getRandomColor()};
   border-radius: 10px;
   padding: 20px;
   margin: 20px;
@@ -27,7 +36,7 @@ export const StyledItem = styled.li`
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 5px;
-  background-color: #f7f7f7;
+  background-color: ${({ bgColor }) => bgColor || getRandomColor()};
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s, transform 0.2s;
 
